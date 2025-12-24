@@ -1,26 +1,1033 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Eastern Homes MN - Affordable Housing Development in Twin Cities</title>
+    <meta
+      name="description"
+      content="Building affordable housing solutions for medium-sized builders in the Twin Cities. Expert land development and new construction services."
+    />
+    <meta
+      name="keywords"
+      content="Twin Cities housing development, affordable housing Minnesota, land development Twin Cities, home construction Minneapolis, St Paul builders, residential development Minnesota, commercial development Twin Cities, Eastern Homes MN"
+    />
+    <meta name="author" content="Eastern Homes MN" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://easternhomesmn.com/" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://easternhomesmn.com/" />
+    <meta property="og:title" content="Eastern Homes MN - Affordable Housing Development in Twin Cities" />
+    <meta property="og:description" content="Building affordable housing solutions for medium-sized builders in the Twin Cities. Expert land development and new construction services." />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://easternhomesmn.com/" />
+    <meta property="twitter:title" content="Eastern Homes MN - Affordable Housing Development in Twin Cities" />
+    <meta property="twitter:description" content="Building affordable housing solutions for medium-sized builders in the Twin Cities. Expert land development and new construction services." />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Eastern Homes MN",
+        "description": "Building affordable housing solutions for medium-sized builders in the Twin Cities.",
+        "url": "https://easternhomesmn.com",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Twin Cities, Minnesota"
+        },
+        "email": "mahesh@easternhomesmn.com"
+      }
+    </script>
+
+    <style>
+      /* Hide scrollbar for all browsers */
+      html {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+      }
+      html::-webkit-scrollbar {
+        display: none;
+      }
+
+      :root {
+        --primary: #1d4ed8;
+        --primary-foreground: #ffffff;
+        --accent: #0ea5e9;
+        --background: #ffffff;
+        --foreground: #0f172a;
+        --muted-foreground: #64748b;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --radius: 16px;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--background);
+        color: var(--foreground);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1, h2, h3 {
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+
+      h1 { font-size: 2.75rem; font-weight: 700; }
+      h2 { font-size: 2rem; font-weight: 700; }
+      h3 { font-size: 1.25rem; font-weight: 600; }
+
+      p {
+        margin-bottom: 16px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        transition: box-shadow 0.3s;
+      }
+
+      .nav.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+
+      .brand {
+        font-weight: 700;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-link {
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 500;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .nav-link:hover {
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--primary);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        background: var(--primary);
+        color: var(--primary-foreground);
+        border-radius: 14px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(29, 78, 216, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--foreground);
+        border: 1px solid var(--border);
+      }
+
+      .btn-outline:hover {
+        background: rgba(29, 78, 216, 0.08);
+        border-color: var(--primary);
+        color: var(--primary);
+        box-shadow: none;
+      }
+
+      .btn-hero {
+        background: var(--primary-foreground);
+        color: var(--primary);
+      }
+
+      .btn-hero:hover {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Hero Section */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        min-height: calc(100vh - 72px);
+        padding: 100px 0 64px;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.4));
+      }
+
+      .stats-bar {
+        display: flex;
+        gap: 32px;
+        padding: 24px 0;
+        border-top: 1px solid var(--border);
+        margin-top: 16px;
+      }
+
+      /* Grid */
+      .grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .muted {
+        color: var(--muted-foreground);
+      }
+
+      /* Sections */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-muted {
+        background: rgba(226, 232, 240, 0.4);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 48px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--primary);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .stat {
+        text-align: center;
+        padding: 16px;
+      }
+
+      .stat-value {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* Project Cards */
+      .project-card {
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        background: #0f172a;
+        color: #fff;
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: scale(1.02);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+      }
+
+      .project-card:hover img {
+        opacity: 1;
+      }
+
+      .project-label {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 24px;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.9));
+      }
+
+      /* CTA Section */
+      .cta {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: var(--primary-foreground);
+        border-radius: var(--radius);
+        padding: 80px 24px;
+        text-align: center;
+      }
+
+      .cta h2 {
+        color: #fff;
+        margin-bottom: 16px;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 500px;
+        margin: 0 auto 32px;
+      }
+
+      /* Forms */
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form-group label {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        font-size: 1rem;
+        font-family: inherit;
+        background: #fff;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      /* Tag List */
+      .tag-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .tag-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: var(--primary);
+      }
+
+      /* Notice */
+      .notice {
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: rgba(34, 197, 94, 0.1);
+        color: #15803d;
+        font-weight: 600;
+        display: none;
+        margin-top: 16px;
+      }
+
+      .notice.active {
+        display: block;
+      }
+
+      /* Footer */
+      .footer {
+        background: rgba(226, 232, 240, 0.6);
+        border-top: 1px solid var(--border);
+        padding: 56px 0 32px;
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .footer h3 {
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer li {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        color: var(--muted-foreground);
+      }
+
+      .footer a:hover {
+        color: var(--primary);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        margin-top: 32px;
+        padding-top: 24px;
+        text-align: center;
+      }
+
+      /* Mobile Toggle */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 24px 24px;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+
+      /* Contact Info Card */
+      .contact-info {
+        background: rgba(226, 232, 240, 0.4);
+      }
+
+      .contact-info-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .contact-info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding-top: 120px;
+        }
+
+        .hero-content {
+          align-items: center;
+        }
+
+        .hero-image {
+          order: -1;
+        }
+
+        .hero-image img {
+          height: 320px;
+        }
+
+        .stats-bar {
+          justify-content: center;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .investors-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-toggle {
+          display: inline-flex;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .section {
+          padding: 48px 0;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .contact-card-wide {
+          grid-column: span 1 !important;
+        }
+      }
+    </style>
   </head>
-
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+      <div class="container nav-inner">
+        <a class="brand" href="#home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18" />
+            <path d="M6 21V7l6-4 6 4v14" />
+            <path d="M9 21v-8h6v8" />
+          </svg>
+          Eastern Homes MN
+        </a>
+        <div class="nav-links">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#projects">Past Projects</a>
+          <a class="nav-link" href="#investors">For Investors</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-toggle">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#projects">Past Projects</a>
+        <a class="nav-link" href="#investors">For Investors</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="section">
+        <div class="container">
+          <div class="hero">
+            <div class="hero-content">
+              <span class="badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+                Twin Cities Housing Development
+              </span>
+              <h1>Building Communities, One Home at a Time</h1>
+              <p class="muted" style="font-size: 1.1rem; margin-bottom: 8px;">
+                We specialize in affordable housing development for medium-sized builders across Minneapolis and St. Paul. From land acquisition to finished homes, we handle every step.
+              </p>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a class="btn" href="#contact">Start Your Project</a>
+                <a class="btn btn-outline" href="#projects">View Our Work</a>
+              </div>
+              <div class="stats-bar">
+                <div class="stat">
+                  <div class="stat-value">15+</div>
+                  <div class="muted">Years Experience</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">50+</div>
+                  <div class="muted">Projects Completed</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">$25M+</div>
+                  <div class="muted">Development Value</div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+                alt="Modern residential home in Twin Cities"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="section section-muted">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">What We Do</span>
+            <h2>Comprehensive Development Services</h2>
+            <p class="muted">From raw land to move-in ready homes, we provide end-to-end solutions for residential development in the Twin Cities metro area.</p>
+          </div>
+          <div class="grid grid-3">
+            <article class="card">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+              </div>
+              <h3>Land Development</h3>
+              <p class="muted">Site selection, due diligence, entitlements, and infrastructure development for residential projects.</p>
+            </article>
+            <article class="card">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18" />
+                  <path d="M5 21V7l8-4 8 4v14" />
+                  <path d="M9 21v-6h6v6" />
+                </svg>
+              </div>
+              <h3>New Construction</h3>
+              <p class="muted">Quality home building with efficient designs, modern amenities, and attention to detail.</p>
+            </article>
+            <article class="card">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>Builder Support</h3>
+              <p class="muted">Partnering with medium-sized builders to streamline projects and maximize efficiency.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">Our Portfolio</span>
+            <h2>Past Projects</h2>
+            <p class="muted">Explore our completed developments showcasing quality construction and community-focused design.</p>
+          </div>
+          <div class="grid grid-3">
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+                alt="Maple Grove residential development"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>Maple Grove Residences</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">12 Single-Family Homes</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
+                alt="Plymouth townhome community"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>Plymouth Townhomes</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">24 Townhome Units</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80"
+                alt="Eden Prairie development"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>Eden Prairie Estates</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">8 Custom Homes</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80"
+                alt="Bloomington affordable housing"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>Bloomington Commons</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">18 Affordable Units</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80"
+                alt="Minnetonka luxury homes"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>Minnetonka Heights</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">6 Luxury Homes</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
+                alt="St. Paul urban development"
+                loading="lazy"
+              />
+              <div class="project-label">
+                <h3>St. Paul Urban Living</h3>
+                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">32 Urban Units</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Investors Section -->
+      <section id="investors" class="section section-muted">
+        <div class="container">
+          <div class="grid investors-grid" style="grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+            <div>
+              <span class="badge">Investment Opportunity</span>
+              <h2>Partner With Us</h2>
+              <p class="muted">
+                Join Eastern Homes MN in building affordable housing solutions across the Twin Cities. We offer investment opportunities in residential and commercial development with competitive returns.
+              </p>
+              <ul class="tag-list" style="margin-top: 24px;">
+                <li><span class="dot"></span> Experienced team with 15+ years in the market</li>
+                <li><span class="dot"></span> Focus on affordable, high-demand housing</li>
+                <li><span class="dot"></span> Transparent reporting and communication</li>
+                <li><span class="dot"></span> Strong market presence in Twin Cities</li>
+                <li><span class="dot"></span> Track record of successful projects</li>
+              </ul>
+            </div>
+            <div>
+              <div class="card">
+                <h3>Request Investment Information</h3>
+                <p class="muted" style="font-size: 0.9rem;">Fill out the form below and we'll send you detailed information about our current and upcoming investment opportunities.</p>
+                <form id="investor-form" style="display: grid; gap: 16px; margin-top: 20px;">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="inv-name">Full Name *</label>
+                      <input id="inv-name" name="name" type="text" required placeholder="Your name" />
+                    </div>
+                    <div class="form-group">
+                      <label for="inv-email">Email Address *</label>
+                      <input id="inv-email" name="email" type="email" required placeholder="you@example.com" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inv-phone">Phone Number</label>
+                    <input id="inv-phone" name="phone" type="tel" placeholder="(555) 123-4567" />
+                  </div>
+                  <button class="btn" type="submit">Request Information</button>
+                  <div class="notice" id="investor-notice">Thanks for your interest! We'll be in touch soon.</div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <h2>Ready to Start Your Next Project?</h2>
+            <p>Let's discuss how Eastern Homes MN can help bring your development vision to life.</p>
+            <a class="btn btn-hero" href="#contact">Get Started Today</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section section-muted">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Eastern Homes MN</h2>
+            <p class="muted">Tell us about your next low- to mid-size development. We'll follow up to discuss timelines, scope, and the right support for your project.</p>
+          </div>
+
+          <div class="grid contact-grid" style="grid-template-columns: 2fr 1fr; gap: 24px;">
+            <div class="card contact-card-wide" style="grid-column: span 1;">
+              <h3>Send a Message</h3>
+              <form id="contact-form" style="display: grid; gap: 16px; margin-top: 16px;">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="contact-name">Full Name *</label>
+                    <input id="contact-name" name="name" type="text" required placeholder="Your name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email Address *</label>
+                    <input id="contact-email" name="email" type="email" required placeholder="you@example.com" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input id="contact-phone" name="phone" type="tel" placeholder="(555) 123-4567" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-message">Project Details *</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows="5"
+                    placeholder="Share the location, size, and goals for your project."
+                  ></textarea>
+                </div>
+                <button class="btn" type="submit">Send Message</button>
+                <div class="notice" id="contact-notice">Thanks for reaching out! We'll respond shortly.</div>
+              </form>
+            </div>
+
+            <div style="display: grid; gap: 16px;">
+              <div class="card contact-info">
+                <h3>Direct Contact</h3>
+                <div class="contact-info-item">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16v16H4z" />
+                    <path d="m4 4 8 8 8-8" />
+                  </svg>
+                  <div>
+                    <p style="margin: 0;"><strong>Email</strong></p>
+                    <a class="muted" href="mailto:mahesh@easternhomesmn.com">mahesh@easternhomesmn.com</a>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2c-3.9 0-7 3-7 6.8 0 5.2 7 12.4 7 12.4s7-7.2 7-12.4C19 5 15.9 2 12 2z" />
+                    <circle cx="12" cy="8.8" r="2.6" />
+                  </svg>
+                  <div>
+                    <p style="margin: 0;"><strong>Primary Market</strong></p>
+                    <p class="muted" style="margin: 0;">Twin Cities, Minnesota</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(140deg, rgba(29, 78, 216, 0.08), rgba(14, 165, 233, 0.1));">
+                <h3>What We Build</h3>
+                <p class="muted" style="margin: 0;">We develop low- to mid-size residential properties with a focus on quality, efficient layouts, and long-term community value.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18" />
+                <path d="M6 21V7l6-4 6 4v14" />
+                <path d="M9 21v-8h6v8" />
+              </svg>
+              <strong>Eastern Homes MN</strong>
+            </div>
+            <p class="muted" style="font-size: 0.9rem;">Building affordable housing solutions for medium-sized builders in the Twin Cities area.</p>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#investors">For Investors</a></li>
+              <li><a href="#projects">Past Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Services</h3>
+            <ul>
+              <li>Land Development</li>
+              <li>New Construction</li>
+              <li>Affordable Housing</li>
+              <li>Builder Support</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li>Twin Cities, Minnesota</li>
+              <li><a href="mailto:mahesh@easternhomesmn.com">mahesh@easternhomesmn.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom muted">
+          © <span id="year"></span> Eastern Homes MN. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document.getElementById('mobile-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.getElementById('mobile-menu').classList.remove('active');
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('href').substring(1);
+          var targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            var navHeight = document.getElementById('navbar').offsetHeight;
+            var targetPosition = targetElement.offsetTop - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Investor form submission
+      document.getElementById('investor-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('investor-notice').classList.add('active');
+        this.reset();
+      });
+
+      // Contact form submission
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('contact-notice').classList.add('active');
+        this.reset();
+      });
+    </script>
   </body>
 </html>
