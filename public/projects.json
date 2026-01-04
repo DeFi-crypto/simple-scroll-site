@@ -1,0 +1,32 @@
+[
+  {
+    "id": "project-1",
+    "title": "Maple Grove Residences",
+    "tag": "Past - Land Development",
+    "description": "A beautiful development featuring 12 single-family homes with modern designs and community-focused layouts.",
+    "date": "Completed Fall 2023",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+    ]
+  },
+  {
+    "id": "project-2",
+    "title": "Plymouth Townhomes",
+    "tag": "Current Project",
+    "description": "24 townhome units currently under development with efficient layouts and modern amenities.",
+    "date": "Started January 2024",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
+    ]
+  },
+  {
+    "id": "project-3",
+    "title": "Eden Prairie Estates",
+    "tag": "House Development",
+    "description": "8 custom homes designed for families looking for quality construction and thoughtful design.",
+    "date": "Spring 2022",
+    "images": [
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80"
+    ]
+  }
+]
