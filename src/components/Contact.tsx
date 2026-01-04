@@ -1,16 +1,6 @@
-import { useState } from 'react';
 import { Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const [showNotice, setShowNotice] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setShowNotice(true);
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setShowNotice(false), 5000);
-  };
-
   return (
     <section id="contact" className="py-20 section-muted">
       <div className="max-w-[1200px] mx-auto px-6">
@@ -24,7 +14,12 @@ const Contact = () => {
         <div className="grid lg:grid-cols-[2fr_1fr] gap-6">
           <div className="bg-card border border-border rounded-2xl p-7 shadow-sm">
             <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="grid gap-4">
+            <form
+              action="mailto:mahesh@easternhomesmn.com?subject=Eastern%20Homes%20MN%20Inquiry"
+              method="post"
+              encType="text/plain"
+              className="grid gap-4"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="contact-name" className="font-medium text-sm">
@@ -84,11 +79,6 @@ const Contact = () => {
               >
                 Send Message
               </button>
-              {showNotice && (
-                <div className="px-4 py-3.5 rounded-xl bg-green-500/10 text-green-700 font-semibold">
-                  Thanks for reaching out! We'll respond shortly.
-                </div>
-              )}
             </form>
           </div>
 
