@@ -23,7 +23,7 @@ const About = () => {
               With over 8+ years of experience in real estate development across the Twin Cities, I founded Eastern Homes MN with a simple mission: to build quality, luxury and affordable housing.
             </p>
             <p className="text-muted-foreground">
-              We work closely with medium-sized builders and investors to create residential developments that meet the growing demand for housing in the Twin Cities and around Minnesota. Our focus is on efficiency, quality, and long-term value.
+              We work closely with investors to create residential developments that meet the growing demand for housing in Minnesota and around Twin Cities. Our focus is on efficiency, quality, and long-term value.
             </p>
           </div>
         </div>

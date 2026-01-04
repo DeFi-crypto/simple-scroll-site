@@ -1,32 +1,42 @@
 [
   {
     "id": "project-1",
-    "title": "Maple Grove Residences",
+    "title": "Green Isle",
     "tag": "Past - Land Development",
-    "description": "A beautiful development featuring 12 single-family homes with modern designs and community-focused layouts.",
-    "date": "Completed Fall 2023",
+    "description": "Developed 22 acre land into 42 single family lots.",
+    "date": "Completed July 2025",
     "images": [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+      "https://i.ibb.co/bRDjmvP1/plat-map.png"
     ]
   },
   {
     "id": "project-2",
-    "title": "Plymouth Townhomes",
-    "tag": "Current Project",
-    "description": "24 townhome units currently under development with efficient layouts and modern amenities.",
-    "date": "Started January 2024",
+    "title": "Upcoming",
+    "tag": "Planned Development",
+    "description": "One of it's kind luxrious single family housing development.",
+    "date": "Coming Soon",
     "images": [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
     ]
   },
   {
     "id": "project-3",
-    "title": "Eden Prairie Estates",
+    "title": "Completed Project",
     "tag": "House Development",
-    "description": "8 custom homes designed for families looking for quality construction and thoughtful design.",
-    "date": "Spring 2022",
+    "description": "20 Units Multifamily development in Dhayari Garmal Pune Maharashtra, India.  ",
+    "date": "Completed in 2011",
     "images": [
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80"
+      "https://i.ibb.co/N23LzTC4/image.png"
+    ]
+  },
+  {
+    "id": "project-4",
+    "title": "Completed Project",
+    "tag": "House Development",
+    "description": "12 Units Multifamily development in Dhayari Garmal Pune Maharashtra, India.  ",
+    "date": "Completed in 2010",
+    "images": [
+      "https://i.ibb.co/0vQsbYb/image.png"
     ]
   }
 ]
