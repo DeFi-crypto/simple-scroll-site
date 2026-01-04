@@ -191,16 +191,6 @@
         box-shadow: none;
       }
 
-      .btn-hero {
-        background: var(--primary-foreground);
-        color: var(--primary);
-      }
-
-      .btn-hero:hover {
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
-      }
-
       /* Hero Section */
       .hero {
         display: grid;
@@ -320,24 +310,55 @@
         position: relative;
         background: #0f172a;
         color: #fff;
-        transition: transform 0.3s;
+        transition: all 0.4s ease;
+        cursor: pointer;
       }
 
       .project-card:hover {
         transform: scale(1.02);
       }
 
-      .project-card img {
-        width: 100%;
+      .project-card.expanded {
+        transform: scale(1.05);
+        z-index: 10;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-card-image-wrapper {
+        position: relative;
         height: 320px;
+        overflow: hidden;
+      }
+
+      .project-card-image-wrapper img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         opacity: 0.9;
         transition: opacity 0.3s;
       }
 
-      .project-card:hover img {
+      .project-card:hover .project-card-image-wrapper img {
         opacity: 1;
       }
+
+      .project-tag {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        background: rgba(29, 78, 216, 0.9);
+        color: #fff;
+        z-index: 2;
+      }
+
+      .project-tag.planned { background: rgba(234, 179, 8, 0.9); color: #1f2937; }
+      .project-tag.past { background: rgba(34, 197, 94, 0.9); color: #fff; }
+      .project-tag.current { background: rgba(59, 130, 246, 0.9); color: #fff; }
+      .project-tag.house { background: rgba(139, 92, 246, 0.9); color: #fff; }
 
       .project-label {
         position: absolute;
@@ -346,24 +367,122 @@
         background: linear-gradient(180deg, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.9));
       }
 
-      /* CTA Section */
-      .cta {
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        color: var(--primary-foreground);
-        border-radius: var(--radius);
-        padding: 80px 24px;
-        text-align: center;
+      .project-description {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        background: rgba(15, 23, 42, 0.95);
+        padding: 0 24px;
       }
 
-      .cta h2 {
+      .project-card.expanded .project-description {
+        max-height: 200px;
+        padding: 20px 24px;
+      }
+
+      .project-date {
+        font-size: 0.8rem;
+        opacity: 0.7;
+        margin-top: 8px;
+      }
+
+      /* Carousel */
+      .carousel-container {
+        position: relative;
+        height: 100%;
+      }
+
+      .carousel-slides {
+        display: flex;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 3;
+      }
+
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .carousel-dot.active {
+        background: #fff;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
         color: #fff;
-        margin-bottom: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.3s, background 0.2s;
       }
 
-      .cta p {
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 500px;
-        margin: 0 auto 32px;
+      .project-card:hover .carousel-btn {
+        opacity: 1;
+      }
+
+      .carousel-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .carousel-btn.prev { left: 12px; }
+      .carousel-btn.next { right: 12px; }
+
+      /* About Section */
+      .about-section {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid var(--primary);
+        box-shadow: 0 12px 32px rgba(29, 78, 216, 0.2);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       /* Forms */
@@ -447,6 +566,22 @@
         display: block;
       }
 
+      /* Contact Info Card */
+      .contact-info {
+        background: rgba(226, 232, 240, 0.4);
+      }
+
+      .contact-info-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .contact-info-item:last-child {
+        margin-bottom: 0;
+      }
+
       /* Footer */
       .footer {
         background: rgba(226, 232, 240, 0.6);
@@ -511,22 +646,6 @@
         display: flex;
       }
 
-      /* Contact Info Card */
-      .contact-info {
-        background: rgba(226, 232, 240, 0.4);
-      }
-
-      .contact-info-item {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        margin-bottom: 20px;
-      }
-
-      .contact-info-item:last-child {
-        margin-bottom: 0;
-      }
-
       /* Responsive */
       @media (max-width: 900px) {
         .hero {
@@ -557,6 +676,15 @@
 
         h2 {
           font-size: 1.5rem;
+        }
+
+        .about-section {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .about-image {
+          margin: 0 auto;
         }
 
         .investors-grid {
@@ -607,7 +735,8 @@
         </a>
         <div class="nav-links">
           <a class="nav-link" href="#home">Home</a>
-          <a class="nav-link" href="#projects">Past Projects</a>
+          <a class="nav-link" href="#about">About Us</a>
+          <a class="nav-link" href="#projects">Projects</a>
           <a class="nav-link" href="#investors">For Investors</a>
           <a class="btn" href="#contact">Contact Me</a>
         </div>
@@ -615,7 +744,8 @@
       </div>
       <div class="mobile-menu" id="mobile-menu">
         <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#projects">Past Projects</a>
+        <a class="nav-link" href="#about">About Us</a>
+        <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#investors">For Investors</a>
         <a class="btn" href="#contact">Contact Me</a>
       </div>
@@ -669,8 +799,29 @@
         </div>
       </section>
 
+      <!-- About Section -->
+      <section id="about" class="section section-muted">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">About Us</span>
+            <h2>Meet Eastern Homes MN</h2>
+          </div>
+          <div class="about-section">
+            <div class="about-image">
+              <img src="images/mahesh.jpg" alt="Mahesh - Founder of Eastern Homes MN" />
+            </div>
+            <div>
+              <h3>Mahesh</h3>
+              <p class="muted">Founder & Lead Developer</p>
+              <p>With over 15 years of experience in real estate development across the Twin Cities, I founded Eastern Homes MN with a simple mission: to build quality, affordable housing that strengthens our communities.</p>
+              <p class="muted">We work closely with medium-sized builders and investors to create residential developments that meet the growing demand for housing in Minneapolis and St. Paul. Our focus is on efficiency, quality, and long-term value.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Services Section -->
-      <section class="section section-muted">
+      <section class="section">
         <div class="container">
           <div class="section-header">
             <span class="badge">What We Do</span>
@@ -715,137 +866,59 @@
       </section>
 
       <!-- Projects Section -->
-      <section id="projects" class="section">
+      <section id="projects" class="section section-muted">
         <div class="container">
           <div class="section-header">
             <span class="badge">Our Portfolio</span>
-            <h2>Past Projects</h2>
-            <p class="muted">Explore our completed developments showcasing quality construction and community-focused design.</p>
+            <h2>Projects</h2>
+            <p class="muted">Explore our developments showcasing quality construction and community-focused design.</p>
           </div>
-          <div class="grid grid-3">
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
-                alt="Maple Grove residential development"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>Maple Grove Residences</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">12 Single-Family Homes</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80"
-                alt="Plymouth townhome community"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>Plymouth Townhomes</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">24 Townhome Units</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80"
-                alt="Eden Prairie development"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>Eden Prairie Estates</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">8 Custom Homes</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80"
-                alt="Bloomington affordable housing"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>Bloomington Commons</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">18 Affordable Units</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80"
-                alt="Minnetonka luxury homes"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>Minnetonka Heights</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">6 Luxury Homes</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
-                alt="St. Paul urban development"
-                loading="lazy"
-              />
-              <div class="project-label">
-                <h3>St. Paul Urban Living</h3>
-                <p class="muted" style="color: rgba(255,255,255,0.7); margin: 0;">32 Urban Units</p>
-              </div>
-            </article>
+          <div class="grid grid-3" id="projects-grid">
+            <!-- Projects loaded from JSON -->
           </div>
         </div>
       </section>
 
       <!-- Investors Section -->
-      <section id="investors" class="section section-muted">
+      <section id="investors" class="section">
         <div class="container">
-          <div class="grid investors-grid" style="grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-            <div>
-              <span class="badge">Investment Opportunity</span>
-              <h2>Partner With Us</h2>
-              <p class="muted">
-                Join Eastern Homes MN in building affordable housing solutions across the Twin Cities. We offer investment opportunities in residential and commercial development with competitive returns.
-              </p>
-              <ul class="tag-list" style="margin-top: 24px;">
-                <li><span class="dot"></span> Experienced team with 15+ years in the market</li>
-                <li><span class="dot"></span> Focus on affordable, high-demand housing</li>
-                <li><span class="dot"></span> Transparent reporting and communication</li>
-                <li><span class="dot"></span> Strong market presence in Twin Cities</li>
-                <li><span class="dot"></span> Track record of successful projects</li>
-              </ul>
-            </div>
-            <div>
-              <div class="card">
-                <h3>Request Investment Information</h3>
-                <p class="muted" style="font-size: 0.9rem;">Fill out the form below and we'll send you detailed information about our current and upcoming investment opportunities.</p>
-                <form id="investor-form" style="display: grid; gap: 16px; margin-top: 20px;">
-                  <div class="form-grid">
-                    <div class="form-group">
-                      <label for="inv-name">Full Name *</label>
-                      <input id="inv-name" name="name" type="text" required placeholder="Your name" />
-                    </div>
-                    <div class="form-group">
-                      <label for="inv-email">Email Address *</label>
-                      <input id="inv-email" name="email" type="email" required placeholder="you@example.com" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inv-phone">Phone Number</label>
-                    <input id="inv-phone" name="phone" type="tel" placeholder="(555) 123-4567" />
-                  </div>
-                  <button class="btn" type="submit">Request Information</button>
-                  <div class="notice" id="investor-notice">Thanks for your interest! We'll be in touch soon.</div>
-                </form>
-              </div>
-            </div>
+          <div class="section-header">
+            <span class="badge">Investment Opportunity</span>
+            <h2>Partner With Us</h2>
+            <p class="muted">Join Eastern Homes MN in building affordable housing solutions across the Twin Cities. We offer investment opportunities in residential and commercial development with competitive returns.</p>
           </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="section">
-        <div class="container">
-          <div class="cta">
-            <h2>Ready to Start Your Next Project?</h2>
-            <p>Let's discuss how Eastern Homes MN can help bring your development vision to life.</p>
-            <a class="btn btn-hero" href="#contact">Get Started Today</a>
+          <div class="grid grid-3" style="max-width: 900px; margin: 0 auto;">
+            <div class="card" style="text-align: center;">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>15+ Years</h3>
+              <p class="muted" style="margin: 0;">Experienced team in the market</p>
+            </div>
+            <div class="card" style="text-align: center;">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18" />
+                  <path d="M6 21V7l6-4 6 4v14" />
+                  <path d="M9 21v-8h6v8" />
+                </svg>
+              </div>
+              <h3>Affordable Housing</h3>
+              <p class="muted" style="margin: 0;">Focus on high-demand housing</p>
+            </div>
+            <div class="card" style="text-align: center;">
+              <div style="width: 48px; height: 48px; background: rgba(29, 78, 216, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h3>Track Record</h3>
+              <p class="muted" style="margin: 0;">Successful project history</p>
+            </div>
           </div>
         </div>
       </section>
@@ -944,8 +1017,9 @@
             <h3>Quick Links</h3>
             <ul>
               <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
               <li><a href="#investors">For Investors</a></li>
-              <li><a href="#projects">Past Projects</a></li>
+              <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -973,6 +1047,119 @@
     </footer>
 
     <script>
+      // Load projects from JSON
+      async function loadProjects() {
+        try {
+          const response = await fetch('projects.json');
+          const projects = await response.json();
+          const grid = document.getElementById('projects-grid');
+          
+          projects.forEach((project, index) => {
+            const tagClass = getTagClass(project.tag);
+            const hasMultipleImages = project.images.length > 1;
+            
+            const card = document.createElement('article');
+            card.className = 'project-card';
+            card.setAttribute('data-id', project.id);
+            
+            card.innerHTML = `
+              <div class="project-card-image-wrapper">
+                <span class="project-tag ${tagClass}">${project.tag}</span>
+                ${hasMultipleImages ? `
+                  <div class="carousel-container">
+                    <div class="carousel-slides" data-current="0">
+                      ${project.images.map((img, i) => `
+                        <div class="carousel-slide">
+                          <img src="${img}" alt="${project.title} - Image ${i + 1}" loading="lazy" />
+                        </div>
+                      `).join('')}
+                    </div>
+                    <button class="carousel-btn prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+                    <button class="carousel-btn next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+                    <div class="carousel-nav">
+                      ${project.images.map((_, i) => `
+                        <span class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="event.stopPropagation(); goToSlide(this, ${i})"></span>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : `
+                  <img src="${project.images[0]}" alt="${project.title}" loading="lazy" />
+                `}
+                <div class="project-label">
+                  <h3>${project.title}</h3>
+                  <p class="project-date">${project.date}</p>
+                </div>
+              </div>
+              <div class="project-description">
+                <p style="margin: 0;">${project.description}</p>
+              </div>
+            `;
+            
+            card.addEventListener('click', function() {
+              // Close any other expanded cards
+              document.querySelectorAll('.project-card.expanded').forEach(c => {
+                if (c !== this) c.classList.remove('expanded');
+              });
+              this.classList.toggle('expanded');
+            });
+            
+            grid.appendChild(card);
+          });
+        } catch (error) {
+          console.error('Error loading projects:', error);
+        }
+      }
+      
+      function getTagClass(tag) {
+        switch(tag) {
+          case 'Planned Development': return 'planned';
+          case 'Past - Land Development': return 'past';
+          case 'Current Project': return 'current';
+          case 'House Development': return 'house';
+          default: return '';
+        }
+      }
+      
+      // Carousel functions
+      function prevSlide(btn) {
+        const container = btn.parentElement;
+        const slides = container.querySelector('.carousel-slides');
+        const dots = container.querySelectorAll('.carousel-dot');
+        let current = parseInt(slides.getAttribute('data-current'));
+        const total = slides.children.length;
+        
+        current = (current - 1 + total) % total;
+        slides.style.transform = `translateX(-${current * 100}%)`;
+        slides.setAttribute('data-current', current);
+        
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
+      
+      function nextSlide(btn) {
+        const container = btn.parentElement;
+        const slides = container.querySelector('.carousel-slides');
+        const dots = container.querySelectorAll('.carousel-dot');
+        let current = parseInt(slides.getAttribute('data-current'));
+        const total = slides.children.length;
+        
+        current = (current + 1) % total;
+        slides.style.transform = `translateX(-${current * 100}%)`;
+        slides.setAttribute('data-current', current);
+        
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
+      
+      function goToSlide(dot, index) {
+        const container = dot.closest('.carousel-container');
+        const slides = container.querySelector('.carousel-slides');
+        const dots = container.querySelectorAll('.carousel-dot');
+        
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        slides.setAttribute('data-current', index);
+        
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
       // Mobile menu toggle
       document.getElementById('mobile-toggle').addEventListener('click', function() {
         document.getElementById('mobile-menu').classList.toggle('active');
@@ -1015,19 +1202,15 @@
       // Set current year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Investor form submission
-      document.getElementById('investor-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('investor-notice').classList.add('active');
-        this.reset();
-      });
-
       // Contact form submission
       document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
         document.getElementById('contact-notice').classList.add('active');
         this.reset();
       });
+
+      // Load projects on page load
+      document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
   </body>
 </html>
