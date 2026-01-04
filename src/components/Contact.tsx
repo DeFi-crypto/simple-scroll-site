@@ -115,7 +115,7 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-border rounded-2xl p-7">
               <h3 className="text-xl font-semibold mb-2">What We Build</h3>
               <p className="text-muted-foreground m-0">
-                We develop low- to mid-size residential properties with a focus on quality, efficient layouts, and long-term community value.
+                We develop customized residential properties with a focus on quality, efficient layouts, and long-term community value.
               </p>
             </div>
           </div>
